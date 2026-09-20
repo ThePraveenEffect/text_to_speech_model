@@ -1,9 +1,23 @@
 [project]
 name = "tts-generation"
 version = "0.1.0"
-description = "Add your description here"
+description = "Offline Kokoro-82M text-to-speech: render to WAV and live streaming playback"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
+    "kokoro>=0.9.4",
+    "soundfile>=0.14.0",
     "sounddevice>=0.5.6",
+    "numpy>=2.0",
+    "torch>=2.0",
+]
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
+
+[tool.uv.sources]
+torch = [
+    { index = "pytorch-cpu", marker = "sys_platform == 'linux'" },
 ]
