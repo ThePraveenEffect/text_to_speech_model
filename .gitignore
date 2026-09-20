@@ -1,0 +1,18 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# Kokoro model weights - too large for GitHub (312 MB)
+# Download via: huggingface-cli download hexgrad/Kokoro-82M kokoro-v1_0.pth --local-dir models
+models/*.pth
+models/*.pt
+models/*.bin
+*.pth
+
